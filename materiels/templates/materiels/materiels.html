@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Matériels</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/materiels.css' %}">
+    </head>
+<body>
+
+<h1>📦 Liste des Matériels</h1>
+
+<br>
+
+<ul>
+    {% for m in materiels %}
+        <li>
+            <a href="/materiels/{{ m.id }}/">
+                {{ m.nom }}
+            </a>
+            - {{ m.type }} ({{ m.quantite }})
+        </li>
+    {% empty %}
+        <li>Aucun matériel</li>
+    {% endfor %}
+</ul>
+
+<br><br>
+
+<a href="/" style="text-decoration:none; font-size:18px;">
+    ⬅ Retour au Dashboard
+</a>
+
+<a href="/materiels/ajouter/">➕ Ajouter un matériel</a>
+
+
+<br><br>
+</body>
+</html>
+

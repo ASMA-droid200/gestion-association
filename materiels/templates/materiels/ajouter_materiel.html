@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajouter matériel</title>
+</head>
+<body>
+
+<h1>➕ Ajouter un matériel</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <p>
+        Nom :
+        <input type="text" name="nom" required>
+    </p>
+
+    <p>
+        Type :
+        <input type="text" name="type" required>
+    </p>
+
+    <p>
+        Quantité :
+        <input type="number" name="quantite" required>
+    </p>
+
+    <p>
+        Description :
+        <textarea name="description" required></textarea>
+    </p>
+
+    <button type="submit">💾 Enregistrer</button>
+</form>
+
+<br>
+
+<a href="/materiels/">⬅ Retour à la liste</a>
+
+</body>
+</html>

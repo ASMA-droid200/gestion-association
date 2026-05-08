@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestion Association</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!--  <link rel="stylesheet" href="{% static 'css/materiels.css' %}"> -->
+
+</head>
+<body>
+
+<div class="layout">
+
+
+
+    <!-- Sidebar  lehne net7akem fel mathr mta3 menu  -->
+    <div class="sidebar">
+        <h2>📊 Menu</h2>
+    
+        
+        <a href="/materiels/">📦 Matériels</a>
+    
+        <a href="#">👨‍🏫 Enseignants</a>
+        <a href="#">🎓 Étudiants</a>
+    
+        <a href="#">🌸 Session Printemps</a>
+        <a href="#">☀️ Session Été</a>
+
+
+    <!-- HETHI BECH TWALI TEKLIKI WKI N7OT  # TWALI MA3ADCH TEKLIKI-->
+        <a href="/documents/">📁 وثائق الهيئة</a>
+
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+
+        <div class="navbar">
+            <h1>Gestion Association</h1>
+        </div>
+
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

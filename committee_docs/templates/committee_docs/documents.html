@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/documents.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<a href="/documents/" class="sidebar-link">
+    📁 وثائق الهيئة
+</a>
+
+
+
+<h2>📄 Procès-verbaux (PV)</h2>
+
+<div class="docs-section">
+    {% for pv in pvs %}
+        <div class="doc-card">
+            <div class="doc-title">📌 {{ pv.titre }}</div>
+            <a class="doc-link" href="{{ pv.fichier.url }}" target="_blank">
+                Voir PDF
+            </a>
+        </div>
+    {% empty %}
+        <p>Aucun procès-verbal disponible.</p>
+    {% endfor %}
+</div>
+
+<hr>
+
+<h2>📂 Documents PDF</h2>
+
+<div class="docs-section">
+    {% for doc in pdfs %}
+        <div class="doc-card">
+            <div class="doc-title">📄 {{ doc.titre }}</div>
+            <a class="doc-link" href="{{ doc.fichier.url }}" target="_blank">
+                Ouvrir PDF
+            </a>
+        </div>
+    {% empty %}
+        <p>Aucun document disponible.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}
